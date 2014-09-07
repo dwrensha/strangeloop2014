@@ -10,6 +10,11 @@ build = "make generated"
 name = "server"
 path = "src/server.rs"
 
+[[bin]]
+
+name = "client"
+path = "src/client.rs"
+
 [dependencies.capnp]
 git = "https://github.com/dwrensha/capnproto-rust.git"
 

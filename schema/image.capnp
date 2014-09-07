@@ -10,19 +10,25 @@ struct Image {
   width @0 : UInt16;
   height @1 : UInt16;
   pixels @2 : List(Pixel);
-  # the width * height pixels in row-major order
+  # width * height pixels in row-major order
 }
 
 
-struct Analysis {
+struct AnalysisResult {
   objects @0 : List(DetectedObject);
 }
 
+struct Coordinates {
+  x @0 : UInt16;
+  y @1 : UInt16;
+}
+
 struct DetectedObject {
+  position @0 : Coordinates;
   union {
-    person @0 : Person;
-    cat    @1 : Cat;
-    dog    @2 : Dog;
+    person @1 : Person;
+    cat    @2 : Cat;
+    dog    @3 : Dog;
   }
 }
 

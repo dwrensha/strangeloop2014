@@ -5,7 +5,7 @@ pub use strangeloop_include_generated::image_capnp;
 
 mod things {
     use capnp::{MessageBuilder};
-    use image_capnp::{image, pixel, analysis};
+    use image_capnp::{image, pixel, analysis_result};
 
     fn average_pixel(image : image::Reader, average_pixel : pixel::Builder) {
         let mut red_total   : u64 = 0;
@@ -34,8 +34,8 @@ mod things {
     }
 
 
-    fn do_analysis(image : image::Reader, result : analysis::Builder) {
-        
+    fn do_analysis(image : image::Reader, result : analysis_result::Builder) {
+
     }
 
 }
