@@ -4,7 +4,7 @@ pub use strangeloop_include_generated::image_capnp;
 
 mod things {
     use capnp::{MessageBuilder};
-    use image_capnp::{image, pixel, analysis_result, detected_object};
+    use image_capnp::{image, analysis_result, detected_object};
 
     fn use_result(result : analysis_result::Reader) {
         for object in result.get_objects().iter() {

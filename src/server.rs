@@ -5,9 +5,9 @@ pub use strangeloop_include_generated::image_capnp;
 
 mod things {
     use capnp::{MessageBuilder};
-    use image_capnp::{image, pixel, analysis_result};
+    use image_capnp::{color, image, analysis_result};
 
-    fn average_pixel(image : image::Reader, average_pixel : pixel::Builder) {
+    fn average_pixel(image : image::Reader, average_pixel : color::Builder) {
         let mut red_total   : u64 = 0;
         let mut green_total : u64 = 0;
         let mut blue_total  : u64 = 0;
@@ -25,7 +25,7 @@ mod things {
     }
 
 
-    fn pixel_at(image : image::Reader, x : u16, y : u16) -> pixel::Reader {
+    fn pixel_at(image : image::Reader, x : u16, y : u16) -> color::Reader {
 
         // this doesn't work:
         //return ::capnp::MallocMessageBuilder::new_default().init_root::<pixel::Builder>().as_reader();
