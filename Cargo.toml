@@ -1,0 +1,17 @@
+[package]
+
+name = "strangeloop2014"
+version = "0.1.0"
+authors = [ "David Renshaw <dwrenshaw@gmail.com>" ]
+build = "make generated"
+
+[[bin]]
+
+name = "server"
+path = "src/server.rs"
+
+[dependencies.capnp]
+git = "https://github.com/dwrensha/capnproto-rust.git"
+
+[dependencies.capnp-rpc]
+git = "https://github.com/dwrensha/capnp-rpc-rust.git"
