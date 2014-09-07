@@ -41,3 +41,8 @@ struct Cat {
   furColors @0 : List(Color);
 }
 
+
+
+interface ObjectDetector {
+  doAnalysis @0 Image -> AnalysisResult;
+}

@@ -8,10 +8,16 @@ mod things {
 
     fn use_result(result : analysis_result::Reader) {
         for object in result.get_objects().iter() {
+            let aabb = object.get_bounding_box();
+            println!("object at ({},{}) - ({},{})",
+                     aabb.get_min_x(), aabb.get_min_y(),
+                     aabb.get_max_x(), aabb.get_max_y());
 
             match object.which() {
                 Some(detected_object::Person(p)) => {}
-                _ => {}
+                Some(detected_object::Cat(c)) => {
+                }
+                None => println!("  unknown object")
             }
 
         }
