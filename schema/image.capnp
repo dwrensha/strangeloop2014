@@ -18,19 +18,19 @@ struct AnalysisResult {
   objects @0 : List(DetectedObject);
 }
 
-struct AxisAlignedBoundingBox {
-  minX @0 : UInt16;
-  maxX @1 : UInt16;
-  minY @2 : UInt16;
-  maxY @3 : UInt16;
-}
-
 struct DetectedObject {
   boundingBox @0 : AxisAlignedBoundingBox;
   union {
     person @1 : Person;
     cat    @2 : Cat;
   }
+}
+
+struct AxisAlignedBoundingBox {
+  minX @0 : UInt16;
+  maxX @1 : UInt16;
+  minY @2 : UInt16;
+  maxY @3 : UInt16;
 }
 
 struct Person {
@@ -42,7 +42,6 @@ struct Cat {
 }
 
 
-
 interface ObjectDetector {
-  doAnalysis @0 Image -> AnalysisResult;
+  analyze @0 Image -> AnalysisResult;
 }
