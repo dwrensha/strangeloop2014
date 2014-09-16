@@ -12,9 +12,9 @@ mod things {
 
     pub fn average_pixel(image : image::Reader,
                          average_pixel : color::Builder) {
-        let mut red_total   : u64 = 0;
-        let mut green_total : u64 = 0;
-        let mut blue_total  : u64 = 0;
+        let (mut red_total,
+             mut green_total,
+             mut blue_total) = (0u64, 0u64, 0u64);
 
         for pixel in image.get_pixels().iter() {
             red_total   += pixel.get_red() as u64;
@@ -46,6 +46,13 @@ mod things {
         //::capnp::MallocMessageBuilder::new_default()
         //    .init_root::<color::Builder>().as_reader()
         fail!()
+    }
+
+    fn find_match<'a, 'b>(image : image::Reader<'a>,
+                          color : color::Reader<'b>)
+                          -> color::Reader<'a> {
+        fail!();
+//        return color;
     }
 
 

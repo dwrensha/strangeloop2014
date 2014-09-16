@@ -19,11 +19,11 @@ struct AnalysisResult {
 }
 
 struct DetectedObject {
-  boundingBox @0 : AxisAlignedBoundingBox;
   union {
-    person @1 : Person;
-    cat    @2 : Cat;
+    person @0 : Person;
+    cat    @1 : Cat;
   }
+  boundingBox @2 : AxisAlignedBoundingBox;
 }
 
 struct AxisAlignedBoundingBox {
